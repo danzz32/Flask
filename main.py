@@ -10,7 +10,7 @@ def home():
 
 @app.route('/contatos')
 def contato():
-    return 'Qualquer dúvida consulte um dos contatos abaixo'
+    return render_template("contatos.html")
 
 
 if __name__ == '__main__':

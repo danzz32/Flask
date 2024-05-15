@@ -1,14 +1,8 @@
-<!doctype html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-          name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Página inicial</h1>
-    <p>Texto da página inicial</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block body %}
+    <div>
+        <h1>Página inicial</h1>
+        <p>Texto da página inicial</p>
+    </div>
+{% endblock %}
