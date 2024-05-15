@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '5d7f8e99578556d1dcb8c208593b7550'
 
 lista_usuarios = ['Danilo', 'Daniel', 'Thayla', 'Clelton', 'Ericles']
 
