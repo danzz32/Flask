@@ -42,5 +42,7 @@ def login():
     return render_template('login.html', form_login=form_login, form_criar_conta=form_criar_conta)
 
 
+# PRÓXIMA AULA: 598
+
 if __name__ == '__main__':
     app.run(debug=True)
