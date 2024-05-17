@@ -1,9 +1,14 @@
 from flask import *
 
+from flask_sqlalchemy import *
+
 from forms import *
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5d7f8e99578556d1dcb8c208593b7550'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///comunidade.db'
+
+database = SQLAlchemy(app)
 
 lista_usuarios = ['Danilo', 'Daniel', 'Thayla', 'Clelton', 'Ericles']
 
@@ -42,7 +47,7 @@ def login():
     return render_template('login.html', form_login=form_login, form_criar_conta=form_criar_conta)
 
 
-# PRÓXIMA AULA: 598
+# AULA ATUAL: 601 16:30
 
 if __name__ == '__main__':
     app.run(debug=True)
