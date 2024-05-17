@@ -10,8 +10,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///comunidade.db'
 
 database = SQLAlchemy(app)
 
-lista_usuarios = ['Danilo', 'Daniel', 'Thayla', 'Clelton', 'Ericles']
-
 
 @app.route('/')
 def home():
@@ -35,16 +33,21 @@ def login():
 
     if form_login.validate_on_submit() and 'btn_submit_login' in request.form:
         # login executado com sucesso
-        flash(f"Login feito com sucesso no e-mail {form_login.email.data}", 'alert-success')
+        flash(f"Login feito com sucesso no e-mail {form_login.email.data}",
+              'alert-success')
         return redirect(url_for('home'))
 
-    if form_criar_conta.validate_on_submit() and 'btn_submit_criar_conta' in request.form:
+    if form_criar_conta.validate_on_submit(
+    ) and 'btn_submit_criar_conta' in request.form:
         # criação da conta bem sucedida
-        flash(f"Conta criada com sucesso, bem vindo {form_criar_conta.username.data}",
-              'alert-success')  # exibe uma mensagem na tela
+        flash(
+            f"Conta criada com sucesso, bem vindo {form_criar_conta.username.data}",
+            'alert-success')  # exibe uma mensagem na tela
         return redirect(url_for('home'))
 
-    return render_template('login.html', form_login=form_login, form_criar_conta=form_criar_conta)
+    return render_template('login.html',
+                           form_login=form_login,
+                           form_criar_conta=form_criar_conta)
 
 
 # AULA ATUAL: 601 16:30
